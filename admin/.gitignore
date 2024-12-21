@@ -18,6 +18,9 @@
 # misc
 .DS_Store
 *.pem
+.history
+.next
+
 
 # debug
 npm-debug.log*
@@ -25,21 +28,27 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env
+# .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+vercel.multilang.prod.json
 
 # vercel
 .vercel
-vercel.*.json
 
-# graphql-let
-__generated__
-*.graphql.d.ts
-*.graphqls.d.ts
+# typescript
+*.tsbuildinfo
 
-# PWA
-workbox-*.js
-sw.js
+# PWA files
+**/public/sw.js
+**/public/workbox-*.js
+**/public/worker-*.js
+**/public/sw.js.map
+**/public/workbox-*.js.map
+**/public/worker-*.js.map
+
+# IDE
+.idea/
+vercel.demo.json
