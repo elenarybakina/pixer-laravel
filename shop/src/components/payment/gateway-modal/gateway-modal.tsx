@@ -19,6 +19,8 @@ import { Fragment, useEffect, useState } from 'react';
 import PaymentOnline from '@/components/cart/payment/payment-online';
 import cn from 'classnames';
 import CoinbaseIcon from '@/components/icons/payment-gateways/coinbase';
+import AlipayIcon from '@/components/icons/payment-gateways/alipay';
+import AlipayDarkIcon from '@/components/icons/payment-gateways/alipay-dark';
 import { useIsDarkMode } from '@/lib/hooks/use-is-dark-mode';
 import { useAtom } from 'jotai';
 import { paymentGatewayAtom } from '@/components/cart/lib/checkout';
@@ -101,6 +103,15 @@ const PaymentGateways: React.FC<IProps> = ({
       value: PaymentGateway.PAYPAL,
       icon: <PayPalIcon />,
       darkIcon: <PayPalDarkIcon />,
+      component: PaymentOnline,
+      width: 82,
+      height: 21,
+    },
+    ALIPAY: {
+      name: 'Alipay',
+      value: PaymentGateway.ALIPAY,
+      icon: <AlipayIcon />,
+      darkIcon: <AlipayDarkIcon />,
       component: PaymentOnline,
       width: 82,
       height: 21,

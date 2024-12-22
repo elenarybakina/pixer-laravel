@@ -22,6 +22,7 @@ use Marvel\Ai\Ai;
 use Marvel\Console\AdminCreateCommand;
 use Marvel\Console\AWSSetupCommand;
 use Marvel\Console\CopyFilesCommand;
+use Marvel\Console\CopyProductsToLocale;
 use Marvel\Console\GenerateBitPayConfig;
 use Marvel\Console\DatabaseSetupCommand;
 use Marvel\Console\DefaultLanguageSetupCommand;
@@ -50,10 +51,10 @@ use Marvel\Enums\ProductStatus;
 use Marvel\Enums\RefundPolicyStatus;
 use Marvel\Enums\RefundPolicyTarget;
 use Marvel\Enums\Role;
-use Marvel\Payments\Payment;
 use Marvel\Enums\StoreNoticePriority;
 use Marvel\Enums\StoreNoticeType;
 use Marvel\Http\Resources\Resource;
+use Marvel\Payments\Payment;
 use Marvel\Providers\MarvelBroadcastServiceProvider;
 
 class ShopServiceProvider extends ServiceProvider
@@ -99,6 +100,7 @@ class ShopServiceProvider extends ServiceProvider
         AdminCreateCommand::class,
         ImportDemoData::class,
         CopyFilesCommand::class,
+        CopyProductsToLocale::class,
         GenerateBitPayConfig::class,
         SettingsDataImporter::class,
         MailSetupCommand::class,

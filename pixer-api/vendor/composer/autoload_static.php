@@ -653,8 +653,8 @@ class ComposerStaticInit785bc9dfeda36193d243c6eb5fffd8e3
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -6844,6 +6844,7 @@ class ComposerStaticInit785bc9dfeda36193d243c6eb5fffd8e3
         'Marvel\\Console\\AWSSetupCommand' => __DIR__ . '/..' . '/marvel/shop/src/Console/AWSSetupCommand.php',
         'Marvel\\Console\\AdminCreateCommand' => __DIR__ . '/..' . '/marvel/shop/src/Console/AdminCreateCommand.php',
         'Marvel\\Console\\CopyFilesCommand' => __DIR__ . '/..' . '/marvel/shop/src/Console/CopyFilesCommand.php',
+        'Marvel\\Console\\CopyProductsToLocale' => __DIR__ . '/..' . '/marvel/shop/src/Console/CopyProductsToLocale.php',
         'Marvel\\Console\\DatabaseSetupCommand' => __DIR__ . '/..' . '/marvel/shop/src/Console/DatabaseSetupCommand.php',
         'Marvel\\Console\\DefaultLanguageSetupCommand' => __DIR__ . '/..' . '/marvel/shop/src/Console/DefaultLanguageSetupCommand.php',
         'Marvel\\Console\\ENVSetupCommand' => __DIR__ . '/..' . '/marvel/shop/src/Console/ENVSetupCommand.php',
@@ -7298,6 +7299,7 @@ class ComposerStaticInit785bc9dfeda36193d243c6eb5fffd8e3
         'Marvel\\Otp\\Gateways\\TwilioGateway' => __DIR__ . '/..' . '/marvel/shop/src/Otp/Gateways/TwilioGateway.php',
         'Marvel\\Otp\\OtpInterface' => __DIR__ . '/..' . '/marvel/shop/src/Otp/OtpInterface.php',
         'Marvel\\Otp\\Result' => __DIR__ . '/..' . '/marvel/shop/src/Otp/Result.php',
+        'Marvel\\Payments\\Alipay' => __DIR__ . '/..' . '/marvel/shop/src/Payment/Alipay.php',
         'Marvel\\Payments\\Base' => __DIR__ . '/..' . '/marvel/shop/src/Payment/Base.php',
         'Marvel\\Payments\\Bitpay' => __DIR__ . '/..' . '/marvel/shop/src/Payment/Bitpay.php',
         'Marvel\\Payments\\Bkash' => __DIR__ . '/..' . '/marvel/shop/src/Payment/Bkash.php',
