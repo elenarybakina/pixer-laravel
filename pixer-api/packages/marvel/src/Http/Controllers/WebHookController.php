@@ -63,6 +63,12 @@ class WebHookController extends CoreController
     {
         return Payment::handleWebHooks($request);
     }
+
+    public function alipay(Request $request)
+    {
+        return Payment::handleWebHooks($request);
+    }
+
     public function callback(Request $request)
     { 
         return Flutterwave::callback($request);

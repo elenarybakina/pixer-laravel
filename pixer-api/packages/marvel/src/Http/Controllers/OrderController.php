@@ -480,6 +480,10 @@ class OrderController extends CoreController
                 case PaymentGatewayType::FLUTTERWAVE:
                     $this->flutterwave($order, $request, $this->settings);
                     break;
+
+                case PaymentGatewayType::ALIPAY:
+                    $this->alipay($order, $request, $this->settings);
+                    break;
             }
         } catch (MarvelException $e) {
             throw new MarvelException(SOMETHING_WENT_WRONG, $e->getMessage());

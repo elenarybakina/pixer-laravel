@@ -44,6 +44,7 @@ export enum PaymentGateway {
   PAYSTACK = 'PAYSTACK',
   BITPAY = 'BITPAY',
   COINBASE = 'COINBASE',
+  ALIPAY = 'ALIPAY',
 }
 
 export enum ProductStatus {
@@ -1299,6 +1300,7 @@ export interface SettingsOptions {
   useAi?: boolean;
   contactDetails?: ContactDetails;
   minimumOrderAmount?: number;
+  freeShippingAmount?: number;
   currencyToWalletRatio?: number;
   signupPoints?: number;
   maxShopDistance?: number;
@@ -1316,19 +1318,16 @@ export interface SettingsOptions {
   guestCheckout: boolean;
   smsEvent?: SmsEvent;
   emailEvent?: EmailEvent;
+  pushNotification?: PushNotification;
   server_info?: ServerInfo;
   useGoogleMap?: boolean;
-  isProductReview?: boolean;
-  freeShipping?: boolean;
-  freeShippingAmount?: number;
-  pushNotification?: PushNotification;
   enableTerms?: boolean;
   enableCoupons?: boolean;
-  maintenance: Maintenance;
-  isUnderMaintenance: boolean;
+  isProductReview?: boolean;
   enableEmailForDigitalProduct?: boolean;
   isPromoPopUp?: boolean;
   promoPopup?: PromoPopupFormValues;
+  enableReviewPopup?: boolean;
   reviewSystem?: string;
   isMultiCommissionRate?: boolean;
 }
@@ -1780,24 +1779,6 @@ export interface TagQueryOptions extends QueryOptions {
   type: string;
   name: string;
   parent: number | null;
-}
-
-export interface InvoiceTranslatedText {
-  subtotal: string;
-  discount: string;
-  tax: string;
-  delivery_fee: string;
-  total: string;
-  products: string;
-  quantity: string;
-  invoice_no: string;
-  date: string;
-}
-
-export interface GenerateInvoiceDownloadUrlInput {
-  order_id: string;
-  translated_text?: InvoiceTranslatedText;
-  is_rtl: boolean;
 }
 
 export interface AttributeQueryOptions extends QueryOptions {

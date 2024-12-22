@@ -517,8 +517,8 @@ trait PaymentStatusManagerWithOrderTrait
     {
         try {
             $chosen_intent = '';
-             // for multi-gateway options
-             if (isset($order->payment_intent)) {
+            // for multi-gateway options
+            if (isset($order->payment_intent)) {
                 foreach ($order->payment_intent as $key => $intent) {
                     if (strtoupper($request['payment_gateway']) === $order->payment_gateway) {
                         $chosen_intent = $intent;
@@ -541,6 +541,24 @@ trait PaymentStatusManagerWithOrderTrait
             }
         } catch (Exception $e) {
             throw new Exception(SOMETHING_WENT_WRONG_WITH_PAYMENT);
+        }
+    }
+
+    /**
+     * alipay
+     *
+     * @param  Order  $order
+     * @param  Request  $request
+     * @param  Settings  $settings
+     * @return void
+     */
+    public function alipay(Order $order, Request $request, Settings $settings): void
+    {
+        try {
+            $payment_intent = $this->processPaymentIntent($request, $settings);
+            $this->orderStatusManagementOnPayment($order, OrderStatus::PROCESSING, PaymentStatus::SUCCESS);
+        } catch (Exception $e) {
+            throw new HttpException(400, PAYMENT_FAILED);
         }
     }
 

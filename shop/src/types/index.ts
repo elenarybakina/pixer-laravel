@@ -353,6 +353,7 @@ export enum PaymentGateway {
   PAYSTACK = 'PAYSTACK',
   BITPAY = 'BITPAY',
   COINBASE = 'COINBASE',
+  ALIPAY = 'ALIPAY',
 }
 
 export enum OrderStatus {

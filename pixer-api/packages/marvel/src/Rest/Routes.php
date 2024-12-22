@@ -106,6 +106,7 @@ Route::post('webhooks/bitpay', [WebHookController::class, 'bitpay']);
 Route::post('webhooks/coinbase', [WebHookController::class, 'coinbase']);
 Route::post('webhooks/bkash', [WebHookController::class, 'bkash']);
 Route::post('webhooks/flutterwave', [WebHookController::class, 'flutterwave']);
+Route::post('webhooks/alipay', [WebHookController::class, 'alipay']);
 
 Route::post('license-key/verify', [UserController::class, 'verifyLicenseKey']);
 

@@ -21,6 +21,7 @@ import { PayStackDark } from '@/components/icons/payment-gateways/paystack-dark'
 import { RazorPayDarkIcon } from '@/components/icons/payment-gateways/razorpay-dark';
 import { useAtom } from 'jotai';
 import CoinbaseIcon from '@/components/icons/payment-gateways/coinbase';
+import AlipayIcon from '@/components/icons/payment-gateways/alipay';
 
 interface PaymentMethodInformation {
   name: string;
@@ -155,6 +156,15 @@ const PaymentGrid: React.FC<{ className?: string; theme?: 'bw' }> = ({
       width: 100,
       height: 52,
     },
+    ALIPAY: {
+      name: 'Alipay',
+      value: PaymentGateway.ALIPAY,
+      icon: <AlipayIcon />,
+      darkIcon: <AlipayIcon />,
+      component: PaymentOnline,
+      width: 100,
+      height: 52,
+    },
   };
 
   useEffect(() => {
@@ -187,30 +197,21 @@ const PaymentGrid: React.FC<{ className?: string; theme?: 'bw' }> = ({
         <div className="mb-8 grid grid-cols-2 gap-4 md:grid-cols-3">
           {settings?.useEnableGateway &&
             availableGateway &&
-            availableGateway.map((gateway: any, index: any) => {
-              return (
-                <Fragment key={index}>
-                  <PaymentGroupOption
-                    theme={theme}
-                    payment={
-                      AVAILABLE_PAYMENT_METHODS_MAP[
-                        gateway?.name.toUpperCase() as PaymentGateway
-                      ]
-                    }
-                  />
-                </Fragment>
-              );
-            })}
-          {/* {settings?.paymentGateway && (
-            <PaymentGroupOption
-              theme={theme}
-              payment={
-                AVAILABLE_PAYMENT_METHODS_MAP[
-                  settings?.paymentGateway?.toUpperCase() as PaymentGateway
-                ]
-              }
-            />
-          )} */}
+            availableGateway
+              .filter((gateway: any) => gateway?.enabled)
+              .map((gateway: any, index: any) => {
+                const paymentMethod = AVAILABLE_PAYMENT_METHODS_MAP[
+                  gateway?.name.toUpperCase() as PaymentGateway
+                ];
+                return paymentMethod ? (
+                  <Fragment key={index}>
+                    <PaymentGroupOption
+                      theme={theme}
+                      payment={paymentMethod}
+                    />
+                  </Fragment>
+                ) : null;
+              })}
         </div>
       </RadioGroup>
       {/* <div className="mb-5">
